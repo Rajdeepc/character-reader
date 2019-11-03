@@ -6,7 +6,6 @@ const multer = require('multer');
 const { createWorker } = require('tesseract.js')
 const worker = createWorker();
 
-
 // create our storage where file will be storage
 const storage = multer.diskStorage({
     destination: (req,file ,cb) => {
@@ -19,6 +18,7 @@ const storage = multer.diskStorage({
 
 
 const upload = multer({ storage: storage }).single('avatar');
+app.use(upload)
 
 // set your view engine to ejs
 app.set('view engine', 'ejs');
@@ -31,23 +31,19 @@ app.get('/', (req, res) => {
 
 app.post('/upload', (req,res) => {
     upload(req, res, err => {
-      console.log(req.file);
-    //   fs.readFile(`./uploads/${req.file.originalname}` , (err,data) => {
-    //       if(err){
-    //         return console.log("This is your error" + err)
-    //       } 
-    //       worker
-    //       .recognize(data, "eng", {
-    //           tessjs_create_pdf:'1'
-    //       })
-    //       .progress(progress => {
-    //           console.log(progress)
-    //       })
-    //       .then(result => {
-    //           res.send(result.text);
-    //       })
-    //       .finally(() => worker.terminate())
-    //   })
+      console.log("file" + JSON.stringify(req.file))
+      fs.readFile(`./uploads/${req.file.originalname}`, (err,data) => {
+          if(err){
+            return console.log("This is your error" + err)
+          } 
+          worker
+          .recognize(data, "eng", {tessjs_create_pdf:'1'})
+          .progress(progress => {console.log(progress)})
+          .then(result => {
+              res.send(result.text);
+          })
+          .finally(() => worker.terminate())
+      })
     })
 })
 
