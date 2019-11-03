@@ -3,8 +3,8 @@ const app = express();
 const fs = require('fs'); // to read and write files
 const multer = require('multer');
 
-const { createWorker } = require('tesseract.js')
-const worker = createWorker();
+const { TesseractWorker } = require('tesseract.js')
+const worker = new TesseractWorker();
 
 // create our storage where file will be storage
 const storage = multer.diskStorage({
