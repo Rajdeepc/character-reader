@@ -67,3 +67,7 @@ npm start
 1. Go to the [javascript-ocr-reader](https://github.com/Rajdeepc/javascript-ocr-reader.git) and you should see recently pushed branches.
 1. Follow GitHub's instructions.
 1. If possible, include screenshots of visual changes. A Netlify build will also be automatically created once you make your PR so other people can see your change.
+
+If you would like to donate to this project so that i can give dedicated time to scale this below is the link:
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](rajrock38@gmail.com)
