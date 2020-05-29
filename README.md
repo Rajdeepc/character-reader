@@ -75,3 +75,6 @@ If you would like to donate to this project so that i can give dedicated time to
 If you like my work and if my product has helped you in your development please feel free to give a shoutout:
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/RajdeepC?locale.x=en_GB)
+
+### Become a Patreon
+Made for developers and designers by Rajdeep Chandra. Tip me on [Patreon](https://www.patreon.com/chandraraj).
